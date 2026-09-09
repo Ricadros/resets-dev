@@ -742,3 +742,59 @@ footer{
 
   .footer-grid{ flex-direction:column; }
 }
+
+/* Pedido de orçamento guiado */
+[hidden]{ display:none !important; }
+.quote-page{ padding-top:120px; padding-bottom:72px; max-width:960px; }
+.quote-back,.quote-direct a{ color:var(--blue-bright); }
+.quote-heading{ margin:32px 0; max-width:680px; }
+.quote-eyebrow{ color:var(--blue-bright); font-size:.75rem; font-weight:700; letter-spacing:.18em; }
+.quote-heading h1{ font-size:clamp(2.2rem,5vw,3.8rem); line-height:1.12; margin:12px 0 20px; }
+.quote-heading h1 span{ color:var(--blue-bright); }
+.quote-heading p,.quote-muted,.quote-direct{ color:var(--text-dim); }
+.quote-steps{ display:flex; list-style:none; padding:0; margin:0 0 24px; gap:24px; }
+.quote-steps li{ flex:1; color:var(--text-dim); border-bottom:2px solid var(--line); padding:12px 0; font-size:.9rem; }
+.quote-steps span{ margin-right:8px; font-family:var(--font-head); }
+.quote-steps [aria-current],.quote-steps .is-complete{ border-color:var(--blue); color:var(--blue-bright); }
+.quote-panel{ background:radial-gradient(ellipse at top right,rgba(47,139,255,.09),transparent 60%),var(--bg-soft); border:1px solid var(--line); border-radius:18px; padding:clamp(20px,4vw,40px); }
+.quote-panel section{ padding:0; scroll-margin-top:100px; }
+.quote-panel h2{ font-size:clamp(1.4rem,3vw,1.9rem); }
+.quote-muted{ font-size:.95rem; margin:12px 0 24px; }
+.quote-services{ border:0; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:14px; min-width:0; }
+.quote-services label{ display:flex; align-items:flex-start; gap:12px; padding:22px; border:1px solid var(--line); border-radius:12px; background:#0a0a0a; cursor:pointer; transition:border-color .2s,background .2s; }
+.quote-services label:hover{ border-color:var(--blue-bright); }
+.quote-services label:has(input:checked){ border-color:var(--blue); background:rgba(47,139,255,.12); }
+.quote-services input{ accent-color:var(--blue); margin:5px 0 0; flex-shrink:0; width:17px; height:17px; }
+.quote-services b{ display:block; font-family:var(--font-head); }
+.quote-services small{ display:block; color:var(--text-dim); margin-top:8px; line-height:1.5; }
+.quote-fields{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.quote-field{ display:flex; flex-direction:column; gap:10px; font-weight:500; margin-bottom:24px; min-width:0; }
+.quote-field small{ color:var(--text-dim); font-weight:400; }
+.quote-field select,.quote-field textarea{ width:100%; min-height:50px; border:1px solid var(--line); border-radius:8px; padding:12px; background:#101010; color:var(--text); font:inherit; color-scheme:dark; }
+.quote-field textarea{ resize:vertical; }
+.quote-actions{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:12px; border-top:1px solid var(--line); padding-top:24px; margin-top:28px; }
+.quote-actions .btn{ cursor:pointer; font-family:inherit; }
+.quote-message{ white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; padding:24px; background:#050505; border:1px solid var(--line); border-left:3px solid var(--blue); border-radius:8px; }
+.quote-direct{ text-align:center; font-size:.9rem; margin-top:24px; }
+.quote-page :focus-visible{ outline:2px solid var(--blue-bright); outline-offset:4px; }
+.quote-page h2:focus{ outline:none; }
+.quote-sr{ position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:600px){
+  .quote-services,.quote-fields{ grid-template-columns:1fr; }
+  .quote-steps{ gap:12px; }
+  .quote-steps li{ font-size:.8rem; }
+  .quote-steps span{ display:block; }
+  .quote-actions .btn{ width:100%; text-align:center; justify-content:center; }
+}
+
+/* Ícone secundário: discreto no visual, confortável para toque e teclado. */
+.service-heading{ display:flex; align-items:center; gap:12px; }
+.service-heading h1{ min-width:0; }
+.service-share{ display:inline-flex; align-items:center; justify-content:center; flex:0 0 44px; width:44px; height:44px; padding:0; border:0; border-radius:50%; background:transparent; color:#999; cursor:pointer; transition:color .2s,background .2s; }
+.service-share:hover,.service-share:focus-visible{ color:var(--blue-bright); background:rgba(47,139,255,.1); }
+.service-share:focus-visible{ outline:2px solid var(--blue-bright); outline-offset:3px; }
+.service-share:disabled{ opacity:.5; cursor:wait; }
+.share-feedback{ color:var(--text-dim); font-size:.85rem; margin:10px 0; }
+.share-feedback p{ margin:0; }
+.share-feedback label{ display:block; margin-top:8px; }
+.share-feedback input{ display:block; width:100%; max-width:560px; margin-top:6px; padding:10px; background:var(--bg-soft); color:var(--text); border:1px solid var(--line); border-radius:6px; font:inherit; }

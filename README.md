@@ -44,6 +44,15 @@ resets-dev/
 - Perguntas frequentes com apenas um item aberto por lista.
 - Ano atualizado automaticamente no rodapé.
 - Links para solicitar orçamento pelo WhatsApp ou enviar e-mail.
+- Pedido guiado em `orcamento.html`, com escolha do serviço, perguntas específicas e revisão da mensagem antes de abrir o WhatsApp.
+
+### Pedido guiado
+
+Os botões de orçamento levam ao formulário. Nas páginas de serviço, o parâmetro `?servico=` pré-seleciona a opção correspondente (`sistemas`, `manutencao`, `redes` ou `seguranca`).
+
+As perguntas ficam em `assets/orcamento.js`. As respostas permanecem apenas na página, sem armazenamento ou envio a um backend. Ao clicar em “Continuar no WhatsApp”, elas são incluídas no link do WhatsApp; o cliente confirma o envio lá.
+
+Para verificar esse fluxo, teste os quatro serviços, a obrigatoriedade das respostas, os botões de voltar, a troca de serviço e a mensagem final, incluindo acentos e quebras de linha.
 
 ## Manutenção
 

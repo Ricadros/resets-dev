@@ -58,3 +58,75 @@ document.querySelectorAll('.faq-list').forEach(list => {
     });
   });
 });
+
+// Compartilhamento discreto nas páginas de serviço.
+const serviceTitle = document.querySelector('.page-hero h1');
+if (serviceTitle) {
+  const heading = document.createElement('div');
+  heading.className = 'service-heading';
+  serviceTitle.before(heading);
+  heading.append(serviceTitle);
+
+  const shareButton = document.createElement('button');
+  shareButton.type = 'button';
+  shareButton.className = 'service-share';
+  shareButton.title = 'Compartilhar serviço';
+  shareButton.setAttribute('aria-label', 'Compartilhar este serviço');
+  shareButton.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>';
+  heading.append(shareButton);
+
+  const feedback = document.createElement('div');
+  feedback.className = 'share-feedback';
+  feedback.hidden = true;
+  const status = document.createElement('p');
+  status.setAttribute('role', 'status');
+  const manualLabel = document.createElement('label');
+  manualLabel.textContent = 'Link deste serviço';
+  manualLabel.hidden = true;
+  const manualLink = document.createElement('input');
+  manualLink.type = 'text';
+  manualLink.readOnly = true;
+  manualLink.addEventListener('focus', () => manualLink.select());
+  manualLabel.append(manualLink);
+  feedback.append(status, manualLabel);
+  heading.after(feedback);
+
+  shareButton.addEventListener('click', async () => {
+    feedback.hidden = true;
+    manualLabel.hidden = true;
+    status.textContent = '';
+    if (!/^https?:$/.test(location.protocol)) {
+      feedback.hidden = false;
+      status.textContent = 'O compartilhamento estará disponível quando o site estiver publicado.';
+      return;
+    }
+    const url = new URL(location.href);
+    url.hash = '';
+    url.search = '';
+    shareButton.disabled = true;
+    try {
+      if (typeof navigator.share === 'function') {
+        try {
+          await navigator.share({ title: document.title, url: url.href });
+          return;
+        } catch (error) {
+          if (error.name === 'AbortError') return;
+          // Se o compartilhamento nativo falhar, ofereça a cópia do link.
+        }
+      }
+      try {
+        await navigator.clipboard.writeText(url.href);
+        feedback.hidden = false;
+        status.textContent = 'Link copiado! Agora é só enviar para alguém.';
+      } catch {
+        feedback.hidden = false;
+        status.textContent = 'Copie o link abaixo para compartilhar.';
+        manualLabel.hidden = false;
+        manualLink.value = url.href;
+        manualLink.focus();
+      }
+    } finally {
+      shareButton.disabled = false;
+    }
+  });
+}

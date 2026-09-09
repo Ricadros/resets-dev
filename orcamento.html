@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte seu pedido — Resets Informática</title>
+  <meta name="description" content="Conte o que você precisa e prepare seu pedido de orçamento para a Resets Informática pelo WhatsApp.">
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a href="index.html" class="brand"><span class="mark">R</span> RESETS</a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="index.html">Home</a><a href="index.html#servicos">Serviços</a><a href="index.html#sobre">Sobre Nós</a><a href="index.html#contato">Contato</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+  </div></header>
+  <main class="quote-page wrap">
+    <a class="quote-back" href="index.html">← Voltar ao início</a>
+    <div class="quote-heading"><span class="quote-eyebrow">VAMOS RESOLVER</span>
+      <h1>Seu pedido começa <span>aqui.</span></h1>
+      <p>Conta o que você precisa. A gente organiza a mensagem e continua a conversa no WhatsApp.</p>
+    </div>
+    <noscript><p>Para montar seu pedido, ative o JavaScript ou <a href="https://wa.me/5592985129159">fale diretamente pelo WhatsApp</a>.</p></noscript>
+    <div id="quote-app" hidden>
+      <ol class="quote-steps" aria-label="Etapas do pedido"><li aria-current="step"><span>01</span> Serviço</li><li><span>02</span> Detalhes</li><li><span>03</span> Revisão</li></ol>
+      <form id="quote-form" class="quote-panel">
+        <section data-step="0">
+          <h2 tabindex="-1">Como podemos ajudar?</h2><p class="quote-muted">Escolha o serviço que mais combina com o que você precisa.</p>
+          <fieldset class="quote-services"><legend class="quote-sr">Serviço desejado</legend>
+            <label><input type="radio" name="service" value="sistemas" required><span><b>Sistemas &amp; Web</b><small>Sites, lojas virtuais e sistemas para sua empresa.</small></span></label>
+            <label><input type="radio" name="service" value="manutencao"><span><b>Manutenção &amp; Montagem</b><small>Seu computador funcionando como precisa.</small></span></label>
+            <label><input type="radio" name="service" value="redes"><span><b>Redes &amp; Infraestrutura</b><small>Wi-Fi, cabeamento e conexões estáveis.</small></span></label>
+            <label><input type="radio" name="service" value="seguranca"><span><b>Segurança Eletrônica</b><small>Câmeras, alarmes e controle de acesso.</small></span></label>
+          </fieldset>
+        </section>
+        <section data-step="1" hidden>
+          <h2 tabindex="-1">Conta um pouco mais.</h2><p id="quote-selected" class="quote-muted"></p>
+          <div id="quote-questions" class="quote-fields"></div>
+          <label class="quote-field" for="quote-details">Quer acrescentar algo? <small>(opcional)</small>
+            <textarea id="quote-details" rows="4" maxlength="1200" placeholder="Ex.: quando começou o problema ou o que você gostaria de fazer."></textarea>
+          </label>
+        </section>
+        <section data-step="2" hidden>
+          <h2 tabindex="-1">Tudo certo com seu pedido?</h2><p class="quote-muted">Confira a mensagem que vai abrir no WhatsApp.</p>
+          <pre id="quote-message" class="quote-message"></pre>
+          <p class="quote-muted">Você ainda poderá editar e enviar a mensagem no WhatsApp. O orçamento será combinado durante o atendimento.</p>
+        </section>
+        <div class="quote-actions"><button type="button" id="quote-prev" class="btn btn-ghost" hidden>← Voltar</button><button type="submit" id="quote-next" class="btn btn-primary">Continuar →</button><a id="quote-send" class="btn btn-primary" target="_blank" rel="noopener" hidden>Continuar no WhatsApp ↗</a></div>
+      </form>
+    </div>
+    <p class="quote-direct">Prefere conversar direto? <a href="https://wa.me/5592985129159" target="_blank" rel="noopener">Chame a gente no WhatsApp ↗</a></p>
+  </main>
+  <footer><div class="wrap footer-bottom"><span>© <span id="year"></span> Resets Informática</span><span>Manaus, AM</span></div></footer>
+  <script src="assets/main.js"></script>
+  <script src="assets/orcamento.js"></script>
+</body>
+</html>
