@@ -85,24 +85,11 @@ header{
 }
 
 .brand .mark{
-  position:relative;
-  width:38px; height:38px;
-  background:#fff;
-  border-radius:50% 50% 50% 6px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#000;
-  font-family: var(--font-display);
-  font-size:1.15rem;
+  width:44px; height:44px;
+  background:transparent;
+  display:block;
+  object-fit:contain;
   flex-shrink:0;
-}
-.brand .mark::after{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border:1px solid var(--line);
-  border-radius:inherit;
 }
 
 nav.menu{
@@ -664,15 +651,11 @@ footer{
   font-size:1rem;
 }
 .footer-brand .mark{
-  width:30px; height:30px;
-  background:#fff;
-  color:#000;
-  border-radius:50% 50% 50% 5px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family: var(--font-display);
-  font-size:.95rem;
+  width:36px; height:36px;
+  background:transparent;
+  display:block;
+  object-fit:contain;
+  flex-shrink:0;
 }
 .footer-contact{
   display:flex;
