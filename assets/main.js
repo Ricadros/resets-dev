@@ -11,17 +11,35 @@ const menuToggle = document.getElementById('menuToggle');
 const menu = document.getElementById('menu');
 
 if (menuToggle && menu) {
+  document.documentElement.classList.add('menu-ready');
+  menuToggle.setAttribute('aria-controls', menu.id);
+  const closeMenu = (restoreFocus = false) => {
+    menu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menu');
+    if (restoreFocus) menuToggle.focus();
+  };
   menuToggle.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
   });
 
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+      closeMenu();
     });
   });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu.classList.contains('open')) closeMenu(true);
+  });
+  document.addEventListener('click', event => {
+    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('focusin', event => {
+    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+  window.matchMedia('(min-width: 721px)').addEventListener('change', () => closeMenu());
 }
 
 // Scroll reveal — leve, via IntersectionObserver
@@ -30,13 +48,17 @@ const revealEls = document.querySelectorAll('.reveal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (revealEls.length) {
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
     revealEls.forEach(el => el.classList.add('in-view'));
   } else {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
+          // Conteúdo visível por padrão, mesmo se a animação não puder executar.
+          if (typeof entry.target.animate === 'function') {
+            entry.target.animate([{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 520, easing: 'cubic-bezier(.2,.7,.2,1)' });
+          }
           observer.unobserve(entry.target); // anima uma única vez, evita custo repetido
         }
       });
@@ -44,6 +66,38 @@ if (revealEls.length) {
 
     revealEls.forEach(el => observer.observe(el));
   }
+}
+
+// Cabeçalho e navegação por seção, sem interferir na rolagem natural.
+const siteHeader = document.querySelector('header');
+const updateHeader = () => siteHeader?.classList.toggle('is-scrolled', window.scrollY > 24);
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+const sectionLinks = [...document.querySelectorAll('nav.menu a[href^="#"]')];
+if (sectionLinks.length && 'IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      sectionLinks.forEach(link => {
+        const current = link.hash === '#' + entry.target.id;
+        link.classList.toggle('is-active', current);
+        if (current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-15% 0px -55% 0px' });
+  sectionLinks.forEach(link => {
+    const section = document.getElementById(link.hash.slice(1));
+    if (section) sectionObserver.observe(section);
+  });
+}
+const floatingContact = document.querySelector('.floating-contact');
+if (floatingContact && 'IntersectionObserver' in window) {
+  const contactVisibility = new Map();
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => contactVisibility.set(entry.target, entry.isIntersecting));
+    floatingContact.classList.toggle('is-hidden', [...contactVisibility.values()].some(Boolean));
+  }).observe(document.getElementById('contato'));
 }
 
 // FAQ — só um item aberto por vez, pra lista não ficar comprida demais

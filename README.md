@@ -56,6 +56,10 @@ Para verificar esse fluxo, teste os quatro serviços, a obrigatoriedade das resp
 
 ## Manutenção
 
+A reformulação visual usa `assets/redesign.css`, carregado depois de `assets/style.css` nas seis páginas. A página inicial destaca os quatro serviços, os diferenciais e as quatro etapas de contratação. Animações respeitam movimento reduzido e o conteúdo permanece visível sem JavaScript.
+
+O portfólio aguarda imagens e links reais autorizados. Há um comentário em `index.html` indicando o ponto de integração. Até esse material existir, o site direciona para os serviços, sem exibir projetos fictícios ou espaços vazios.
+
 Edite `index.html` para atualizar o conteúdo da página inicial e os arquivos em `servicos/` para alterar os detalhes de cada serviço.
 
 O arquivo `assets/style.css` concentra os estilos de todas as páginas. As variáveis em `:root` definem as cores, fontes e medidas principais. As interações ficam em `assets/main.js`.

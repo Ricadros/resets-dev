@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resets Informática</title>
+<title>Resets — Sites, sistemas e soluções em tecnologia</title>
 <link rel="icon" type="image/jpeg" href="logo.jpeg">
 <meta name="description" content="Desenvolvimento de sistemas e sites, manutenção e montagem de PCs, redes e infraestrutura, e segurança eletrônica em Manaus.">
 
@@ -11,60 +11,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/redesign.css">
 </head>
-<body>
+<body class="home-page">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header><div class="wrap nav">
+  <a href="#home" class="brand" aria-label="Resets, início"><img class="mark" src="assets/logo-resets.png" alt="" width="44" height="44">RESETS</a>
+  <nav class="menu" id="menu" aria-label="Menu principal"><a href="#home" class="is-active" aria-current="location">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre nós</a><a href="#processo">Como funciona</a><a href="#contato" class="nav-contact">Vamos conversar <span aria-hidden="true">↗</span></a></nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<main id="conteudo">
+<section class="hero launch-hero" id="home" aria-labelledby="hero-title">
+  <div class="ambient-light" aria-hidden="true"></div>
+  <div class="wrap hero-layout">
+    <div class="hero-copy">
+    <h1 id="hero-title" class="hero-enter">Resets Informática, toda e qualquer <span>solução</span> em tecnologia.</h1>
+    <p class="lead hero-enter">Se o seu sistema trava, a sua rede cai ou o computador não aguenta o dia a dia, a gente resolve. Sem enrolação e cumprindo prazos de verdade.</p>
 
-<!-- ============================================================
-     CABEÇALHO
-     ============================================================ -->
-<header>
-  <div class="wrap nav">
-    <a href="index.html" class="brand">
-      <img class="mark" src="assets/logo-resets.png" alt="" width="44" height="44">
-      RESETS
-    </a>
-
-    <nav class="menu" id="menu">
-      <a href="index.html" class="is-active">Home</a>
-      <a href="index.html#servicos">Serviços</a>
-      <a href="index.html#sobre">Sobre Nós</a>
-      <a href="index.html#contato">Contato</a>
-    </nav>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
-  </div>
-</header>
-
-<!-- ============================================================
-     HERO
-     ============================================================ -->
-<section class="hero" id="home">
-  <div class="hero-mesh" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="dot-corner" aria-hidden="true"></div>
-
-  <div class="wrap">
-    <h1>Resets Informática, toda e qualquer <span>solução</span> em tecnologia.</h1>
-    <p class="lead">Se o seu sistema trava, a sua rede cai ou o computador não aguenta o dia a dia, a gente resolve. Sem enrolação e cumprindo prazos de verdade.</p>
-
-    <div class="hero-actions">
+    <div class="hero-actions hero-enter">
       <a href="orcamento.html" class="btn btn-primary">Montar meu pedido</a>
       <a href="index.html#servicos" class="btn btn-ghost">Ver serviços</a>
     </div>
   </div>
+  </div><div class="wrap hero-baseline"><span>DO DIGITAL AO SEU ESPAÇO.</span><a href="#servicos">Explore as soluções <span aria-hidden="true">↓</span></a></div>
 </section>
-
-<!-- ============================================================
-     SERVIÇOS — grade hexagonal
-     ============================================================ -->
-<section id="servicos">
+<section id="servicos" aria-labelledby="services-title">
   <div class="wrap">
     <div class="section-head reveal">
-      <h2>O que fazemos</h2>
+      <h2 id="services-title">O que fazemos</h2>
       <p>Não vendemos pacotes fechados. Primeiro escutamos o que sua empresa precisa, depois montamos a solução certa, seja um sistema, uma rede ou uma câmera bem posicionada.</p>
     </div>
 
@@ -74,7 +48,7 @@
           <div class="hex">
             <div class="hex-tex hex-tex--code"></div>
             <div class="hex-icon-badge">
-              <svg class="hex-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg class="hex-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/>
               </svg>
             </div>
@@ -92,7 +66,7 @@
           <div class="hex">
             <div class="hex-tex hex-tex--board"></div>
             <div class="hex-icon-badge">
-              <svg class="hex-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg class="hex-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="4" y="4" width="16" height="10" rx="1"/><line x1="8" y1="18" x2="16" y2="18"/><line x1="12" y1="14" x2="12" y2="18"/>
               </svg>
             </div>
@@ -108,7 +82,7 @@
           <div class="hex">
             <div class="hex-tex hex-tex--network"></div>
             <div class="hex-icon-badge">
-              <svg class="hex-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg class="hex-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>
               </svg>
             </div>
@@ -124,7 +98,7 @@
           <div class="hex">
             <div class="hex-tex hex-tex--security"></div>
             <div class="hex-icon-badge">
-              <svg class="hex-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg class="hex-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="2" y="7" width="15" height="11" rx="2"/><path d="M17 10l5-3v10l-5-3"/>
               </svg>
             </div>
@@ -139,82 +113,13 @@
     </div>
   </div>
 </section>
-
-<<!-- ============================================================
-     DIFERENCIAIS
-     ============================================================ -->
-<section id="sobre">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Por que a Resets</h2>
-      <p>Entregamos tecnologia, mas o que fica é a relação, por isso levamos atendimento tão a sério quanto o serviço em si.</p>
-    </div>
-
-    <div class="diff-grid">
-      <div class="diff-card reveal">
-        <div class="diff-header">
-          <div class="diff-circle">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.4-4 4.2-6 7.5-6s6.1 2 7.5 6"/>
-            </svg>
-          </div>
-          <span class="diff-badge">Direto e Humano</span>
-        </div>
-        <h3>Atendimento Especializado</h3>
-        <p>Você fala com quem entende do assunto de verdade, sem discurso decorado nem enrolação.</p>
-      </div>
-
-      <div class="diff-card reveal">
-        <div class="diff-header">
-          <div class="diff-circle">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M12 2l7 3v6c0 5-3 8-7 11-4-3-7-6-7-11V5l7-3z"/><path d="M9 12l2 2 4-4"/>
-            </svg>
-          </div>
-          <span class="diff-badge">Zero Surpresas</span>
-        </div>
-        <h3>Transparência e Entrega</h3>
-        <p>Prazo cumprido e comunicação sem enrolação. Você acompanha cada etapa sem surpresas.</p>
-      </div>
-
-      <div class="diff-card reveal">
-        <div class="diff-header">
-          <div class="diff-circle">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4" height="6" rx="1"/><rect x="18" y="13" width="4" height="6" rx="1"/>
-            </svg>
-          </div>
-          <span class="diff-badge">Sem Burocracia</span>
-        </div>
-        <h3>Suporte Rápido</h3>
-        <p>Deu problema? É só chamar. Sem ticket que fica dias esperando alguém responder.</p>
-      </div>
-    </div>
-
-    <!-- CTA Rápido pós-diferenciais -->
-    <div class="diff-cta reveal">
-      <a href="https://wa.me/5592985129159" class="btn btn-primary" target="_blank" rel="noopener">Falar com um especialista agora</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CTA FINAL / CONTATO
-     ============================================================ -->
-<section class="cta" id="contato">
-  <div class="wrap reveal">
-    <h2>Vamos colocar sua infraestrutura pra funcionar de verdade.</h2>
-    <p>Conta pra gente o que está pegando no seu sistema, na sua rede ou na sua segurança, respondemos com uma proposta clara, sem letra miúda.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/5592985129159" class="btn btn-primary" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-      <a href="orcamento.html" class="btn btn-ghost">Montar meu pedido</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     RODAPÉ
-     ============================================================ -->
+<!-- Portfólio: inserir aqui apenas projetos autorizados, com imagem real,
+     nome, descrição, link e identificação de demonstração quando aplicável.
+     Adicionar o botão de projetos e a seção somente quando houver material. -->
+<section id="sobre" class="story-section" aria-labelledby="story-title"><div class="wrap story-layout"><div class="story-sticky"><p class="kicker">02 / POR QUE A RESETS</p><h2 id="story-title">A tecnologia evolui.<br><span>A parceria fica.</span></h2><p>Por trás de cada solução, tem gente que escuta, planeja e acompanha você.</p><div class="story-brand" aria-hidden="true"><img src="assets/logo-resets.png" width="92" height="92" loading="lazy" alt=""><span>O próximo passo<br>começa com uma conversa.</span></div><a class="text-link" href="orcamento.html">Conte o que você precisa <span aria-hidden="true">↗</span></a></div><div class="benefits"><article class="benefit reveal"><span class="benefit-number">01</span><h3>Primeiro, entender.</h3><p>Sua rotina vem antes da ferramenta. Conversamos sobre o que precisa funcionar melhor para indicar uma solução que faça sentido.</p><span class="benefit-tag">ATENDIMENTO DIRETO</span></article><article class="benefit reveal"><span class="benefit-number">02</span><h3>Clareza em cada etapa.</h3><p>Escopo, prazo e próximos passos combinados com você. Comunicação simples para acompanhar o trabalho sem ficar no escuro.</p><span class="benefit-tag">PLANEJAMENTO E TRANSPARÊNCIA</span></article><article class="benefit reveal"><span class="benefit-number">03</span><h3>Uma solução para usar.</h3><p>Visual bem cuidado, funcionamento e orientação na entrega. Tecnologia pensada para entrar na sua rotina.</p><span class="benefit-tag">CUIDADO COM OS DETALHES</span></article></div></div></section>
+<section id="processo" aria-labelledby="process-title"><div class="wrap"><div class="section-intro reveal"><div><p class="kicker">03 / COMO FUNCIONA</p><h2 id="process-title">Da conversa<br><span>à solução.</span></h2></div><p>Você não precisa chegar com todas as respostas. Nós ajudamos a organizar o caminho.</p></div><ol class="process-grid"><li class="reveal"><span>01</span><h3>Conversa</h3><p>Entendemos sua necessidade, suas prioridades e o cenário atual.</p></li><li class="reveal"><span>02</span><h3>Planejamento</h3><p>Definimos a solução, o escopo e os prazos junto com você.</p></li><li class="reveal"><span>03</span><h3>Desenvolvimento</h3><p>Executamos o que foi combinado, com comunicação durante o trabalho.</p></li><li class="reveal"><span>04</span><h3>Entrega</h3><p>Conferimos o funcionamento e orientamos você para começar a usar.</p></li></ol></div></section>
+<section id="contato" class="contact-section" aria-labelledby="contact-title"><div class="wrap"><div class="contact-panel reveal"><p class="kicker">VAMOS DAR O PRÓXIMO PASSO?</p><h2 id="contact-title">Sua ideia.<br><span>Nossa próxima conversa.</span></h2><p>Um site novo, um sistema sob medida ou a tecnologia do seu espaço. Conta para a gente.</p><div class="hero-actions"><a href="https://wa.me/5592985129159?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20minha%20empresa." class="btn btn-primary" target="_blank" rel="noopener">Conversar no WhatsApp <span aria-hidden="true">↗</span></a><a href="orcamento.html" class="btn btn-ghost">Montar meu pedido</a></div><a class="contact-email" href="mailto:resets.dev@gmail.com">resets.dev@gmail.com</a></div></div></section>
+</main>
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -249,6 +154,7 @@
   </div>
 </footer>
 
+
+<a class="floating-contact" href="https://wa.me/5592985129159?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20para%20minha%20empresa." target="_blank" rel="noopener" aria-label="Conversar com a Resets no WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 9.5 19L4 20z"/><path d="M9 8c0 4 3 7 6 7l1-2-2-1-1 1-2-2 1-1-1-2z"/></svg></a>
 <script src="assets/main.js"></script>
-</body>
-</html>
+</body></html>
